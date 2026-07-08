@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guangkai Xu - English Resume</title>
+  <style>
+    @font-face {
+      font-family: "ResumeLatin";
+      src: local("Times New Roman");
+      unicode-range: U+0000-024F, U+2000-206F;
+    }
+    @font-face {
+      font-family: "ResumeCJK";
+      src: local("Songti SC"), local("STSongti-SC-Regular"), local("SimSun");
+      unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+    }
+    * { box-sizing: border-box; }
+    html { background: #eeeeee; }
+    body {
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 24px 46px 34px;
+      color: #111111;
+      background: #ffffff;
+      font-family: "ResumeLatin", "ResumeCJK", "Times New Roman", "Songti SC", "SimSun", serif;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    a { color: #0b4ea2; text-decoration: underline; text-underline-offset: 2px; }
+    h1, h2, h3 {
+      color: #527bbd;
+      line-height: 1.08;
+      margin: 0.72em 0 0.45em;
+      padding-bottom: 0.22em;
+      border-bottom: 1px solid #aaaaaa;
+      font-family: "ResumeLatin", "ResumeCJK", "Times New Roman", "Songti SC", "SimSun", serif;
+    }
+    h1 { margin-top: 0; font-size: 26px; border-bottom: none; }
+    h2 { font-size: 18px; margin-top: 0.88em; }
+    h3 { color: #1b66b2; font-size: 15px; border-bottom: none; }
+    p { margin: 0 0 0.65em; }
+    ul { margin: 0.2em 0 0.8em; padding-left: 1.5em; list-style-type: square; }
+    li { margin-top: 0.42em; }
+    .top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 226px;
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 6px;
+    }
+    .profile-photo {
+      width: 210px;
+      height: 158px;
+      object-fit: contain;
+      object-position: center top;
+      justify-self: center;
+    }
+    .top-main {
+      max-width: none;
+      margin: 0;
+    }
+    .top-main h1 {
+      text-align: left;
+    }
+    .identity { font-weight: 700; }
+    .profile-lines { margin-top: 2px; text-align: left; }
+    .contact { margin-top: 8px; line-height: 1.45; display: block; margin-left: 0; margin-right: 0; text-align: left; }
+    .contact-label { color: #111111; }
+    .contact-value { color: #0b4ea2; }
+    .contact-row {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      column-gap: 16px;
+      width: max-content;
+      max-width: 100%;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .contact-line {
+      display: block;
+      width: 100%;
+    }
+    .contact-anchor {
+      display: block;
+      visibility: hidden;
+      white-space: nowrap;
+      line-height: 0;
+      height: 0;
+      overflow: hidden;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 12px 0 8px;
+    }
+    .metric {
+      border: 1px solid #b8c8e6;
+      border-left: 4px solid #527bbd;
+      padding: 7px 8px;
+      background: #f7faff;
+    }
+    .metric strong {
+      display: block;
+      color: #1a3769;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .metric span {
+      display: block;
+      margin-top: 4px;
+      color: #111111;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .logo-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .heading-logos {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .heading-logos img {
+      display: block;
+      object-fit: contain;
+    }
+    .heading-logos .edu-logo,
+    .heading-logos .company-wordmark {
+      width: auto;
+      height: 18px;
+      max-width: none;
+    }
+    .heading-logos .tencent-logo { height: 16px; }
+    .timeline {
+      margin: 0.15em 0 0.75em;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 106px 1fr;
+      column-gap: 18px;
+      padding: 5px 0 6px;
+      border-bottom: 1px solid #e6eaf2;
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-date {
+      color: #222222;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .timeline-body {
+      min-width: 0;
+    }
+    .timeline-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .timeline-title {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .timeline-title img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+    .timeline-meta {
+      color: #333333;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .timeline-desc {
+      margin: 0;
+      color: #222222;
+    }
+    .timeline-points {
+      grid-column: 1 / -1;
+      margin: 1px 0 0;
+      padding-left: 1.5em;
+      list-style-type: square;
+      color: #222222;
+    }
+    .activity-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 276px;
+      column-gap: 12px;
+      align-items: stretch;
+    }
+    .activity-layout ul {
+      margin: 0;
+    }
+    .activity-layout li:first-child {
+      margin-top: 0;
+    }
+    .activity-layout li {
+      line-height: 1.35;
+    }
+    .conference-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 86px);
+      align-content: space-between;
+      justify-content: end;
+      column-gap: 3px;
+      row-gap: 0;
+      min-height: 102px;
+      align-items: center;
+      justify-items: center;
+    }
+    .conference-logo-grid img {
+      width: 86px;
+      height: 22px;
+      object-fit: contain;
+      display: block;
+    }
+    .awards-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 18px;
+      align-items: stretch;
+    }
+    .awards-layout ul {
+      margin: 0;
+    }
+    .awards-layout li:first-child {
+      margin-top: 0;
+    }
+    .award-photo-frame {
+      width: 220px;
+      align-self: stretch;
+      justify-self: center;
+      display: flex;
+      gap: 6px;
+      align-items: stretch;
+      justify-content: center;
+    }
+    .award-photo {
+      flex: 1 1 0;
+      width: 0;
+      height: 100%;
+      min-width: 0;
+      object-fit: contain;
+      object-position: center;
+      padding: 0;
+    }
+    .pub-note { color: #555555; font-size: 12px; }
+    .pub-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 24px;
+      margin-top: -5px;
+      table-layout: fixed;
+    }
+    .pub-table-coauthor {
+      border-spacing: 0 26px;
+    }
+    .pub-table-compact {
+      border-spacing: 0 14px;
+    }
+    .pub-table-primary {
+      border-spacing: 0 34px;
+    }
+    .pub-img-cell {
+      width: 176px;
+      padding: 0;
+      vertical-align: middle;
+    }
+    .pub-content {
+      padding: 0 0 0 14px;
+      vertical-align: middle;
+      font-size: 13px;
+      line-height: 1.2;
+    }
+    .pub-content a {
+      text-decoration: none;
+    }
+    .pub-thumb {
+      position: relative;
+      width: 176px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .pub-thumb img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 180px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .pub-placeholder-thumb {
+      min-height: 92px;
+      border: 1px solid #aab4ca;
+      background: #f7faff;
+      color: #527bbd;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .pub-badge {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 2px 5px;
+      color: #000000;
+      background: #87ceeb;
+      font-size: 10.5px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .venue {
+      display: inline-block;
+      margin-top: 3px;
+      font-weight: 700;
+    }
+    .paper-links {
+      margin-top: 3px;
+      color: #224b8d;
+      font-size: inherit;
+    }
+    .paper-links a { white-space: nowrap; }
+    .summary {
+      margin-top: 5px;
+      color: #111111;
+      font-size: inherit;
+      line-height: 1.45;
+    }
+    .page-break { break-before: page; page-break-before: always; }
+    .no-break { break-inside: avoid; page-break-inside: avoid; }
+    @page { size: A4; margin: 14mm 14mm 15mm; }
+    @media print {
+      html { background: #ffffff; }
+      body {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        font-size: 11.2px;
+      }
+      h1 { font-size: 22px; }
+      h2 { font-size: 15.5px; margin-top: 0.74em; }
+      h3 { font-size: 13.2px; margin-top: 0.55em; }
+      .top { grid-template-columns: minmax(0, 1fr) 184px; gap: 14px; }
+      .profile-photo { width: 172px; height: 129px; }
+      .metrics { gap: 6px; margin: 8px 0 6px; }
+      .metric { padding: 5px 6px; }
+      .metric strong { font-size: 15px; }
+      .metric span { font-size: 9.5px; }
+      .heading-logos { gap: 8px; }
+      .heading-logos .edu-logo,
+      .heading-logos .company-wordmark { height: 14px; }
+      .heading-logos .tencent-logo { height: 12.5px; }
+      .activity-layout { grid-template-columns: minmax(0, 1fr) 248px; column-gap: 10px; align-items: stretch; }
+      .conference-logo-grid { grid-template-columns: repeat(3, 78px); column-gap: 3px; row-gap: 0; min-height: 88px; align-content: space-between; justify-content: end; }
+      .conference-logo-grid img { width: 78px; height: 20px; }
+      .awards-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 14px; }
+      .award-photo-frame { width: 178px; gap: 5px; }
+      .pub-table { border-spacing: 0 14px; }
+      .pub-table-coauthor { border-spacing: 0 25px; }
+      .pub-table-primary { border-spacing: 0 26px; }
+      .timeline-item { grid-template-columns: 88px 1fr; column-gap: 12px; padding: 4px 0 5px; }
+      .timeline-head { gap: 8px; }
+      .timeline-title img { width: 18px; height: 18px; }
+      .pub-img-cell, .pub-thumb { width: 138px; }
+      .pub-thumb img { max-width: 138px; max-height: 86px; }
+      .pub-content { padding-left: 14px; font-size: 11.2px; line-height: 1.2; }
+      .summary { font-size: inherit; line-height: 1.34; margin-top: 3px; }
+      .pub-note { font-size: 10.6px; }
+      .paper-links { font-size: inherit; margin-top: 1px; }
+      .timeline-points { margin-top: 0; padding-left: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+<div class="top">
+  <div class="top-main">
+    <h1>Guangkai Xu</h1>
+    <div class="profile-lines">
+      <div>Advisors: Prof. Chunhua Shen and Dr. Hao Chen</div>
+      <div>Lab: CAD&amp;CG State Key Laboratory, Zhejiang University</div>
+      <div>Research: Embodied AI, Generalizable 3D Reconstruction, and Visual Perception</div>
+    </div>
+    <div class="contact">
+      <div class="contact-row"><span><span class="contact-label">GitHub: </span><a href="https://github.com/guangkaixu">github.com/guangkaixu</a></span><span><span class="contact-label">Website: </span><a href="https://guangkaixu.github.io">guangkaixu.github.io</a></span></div>
+      <div class="contact-line"><span class="contact-label">Email: </span><a href="mailto:guangkai.xu@gmail.com">guangkai.xu@gmail.com</a></div>
+      <div class="contact-line"><span class="contact-label">Google Scholar: </span><a href="https://scholar.google.com/citations?user=v35sbGEAAAAJ">scholar.google.com/citations?user=v35sbGEAAAAJ</a></div>
+    </div>
+  </div>
+  <img class="profile-photo" src="assets/profile.jpg" alt="Guangkai Xu">
+</div>
+
+<div class="metrics">
+  <div class="metric"><strong>310</strong><span>Google Scholar Citations</span></div>
+  <div class="metric"><strong>12</strong><span>Accepted Papers</span></div>
+  <div class="metric"><strong>5</strong><span>First-Author Papers</span></div>
+  <div class="metric"><strong>4</strong><span>International and National Awards</span></div>
+</div>
+
+<h2 class="logo-heading">Education<span class="heading-logos"><img class="edu-logo" src="assets/logo-strip/edu-zju.png" alt="ZJU"><img class="edu-logo" src="assets/logo-strip/edu-ustc.png" alt="USTC"><img class="edu-logo" src="assets/logo-strip/edu-uestc.png" alt="UESTC"></span></h2>
+<div class="timeline">
+  <div class="timeline-item no-break"><div class="timeline-date">2023.09 - 2027.03</div><div class="timeline-body"><div class="timeline-head"><div class="timeline-title"><span>Zhejiang University (Computer Science and Technology)</span></div><div class="timeline-meta">Ph.D.</div></div></div><ul class="timeline-points"><li>Advised by Prof. Chunhua Shen and Dr. Hao Chen at the CAD&amp;CG State Key Laboratory; research on embodied AI, generalizable 3D reconstruction, and visual perception.</li></ul></div>
+  <div class="timeline-item no-break"><div class="timeline-date">2020.09 - 2023.06</div><div class="timeline-body"><div class="timeline-head"><div class="timeline-title"><span>University of Science and Technology of China (Control Science and Engineering)</span></div><div class="timeline-meta">M.S.</div></div></div><ul class="timeline-points"><li>Advised by Prof. Feng Zhao, who was advised by Prof. Xiaoou Tang, at USTC-BIVLab; research on computer vision.</li></ul></div>
+  <div class="timeline-item no-break"><div class="timeline-date">2016.09 - 2020.06</div><div class="timeline-body"><div class="timeline-head"><div class="timeline-title"><span>University of Electronic Science and Technology of China (Automation)</span></div><div class="timeline-meta">B.S.</div></div></div><ul class="timeline-points"><li>Outstanding Graduate of UESTC; weighted average: 90.7/100; ranked in the top 3%; President of UESTC Maker Center.</li></ul></div>
+</div>
+
+<h2 class="logo-heading">Internship Experience<span class="heading-logos"><img class="company-wordmark tencent-logo" src="assets/logo-strip/intern-tencent.png" alt="Tencent"><img class="company-wordmark" src="assets/logo-strip/intern-dji.png" alt="DJI"><img class="company-wordmark" src="assets/logo-strip/intern-huawei.png" alt="Huawei"><img class="company-wordmark" src="assets/logo-strip/intern-ths.png" alt="Hithink"></span></h2>
+<div class="timeline">
+  <div class="timeline-item no-break"><div class="timeline-date">2025.12 - 2026.06</div><div class="timeline-body"><div class="timeline-head"><div class="timeline-title"><span>Hithink (NLP Bot Department)</span></div><div class="timeline-meta">Algorithm Intern</div></div></div><ul class="timeline-points"><li>Addressed the limited generalization of vision-language navigation (VLN) across scenes. Built a multimodal input paradigm for Qwen3.5-27B using task instructions, first-person observations, and top-down map memory, and iterated prompts, action representations, closed-loop inference, and failure analysis.</li><li>Developed a Habitat-based multimodal navigation data pipeline. Generated optimal trajectories with A* planning on navigation graphs, converted path nodes into navigation points, turning angles, and STOP labels, and fine-tuned Qwen3.5-27B with LoRA under an automated evaluation workflow.</li></ul></div>
+  <div class="timeline-item no-break"><div class="timeline-date">2023.12 - 2024.06</div><div class="timeline-body"><div class="timeline-head"><div class="timeline-title"><span>Tencent (Platform and Content Group)</span></div><div class="timeline-meta">Algorithm Intern</div></div></div><ul class="timeline-points"><li>Led GenPercept (ICLR 2025), transferring pretrained text-to-image diffusion models to general dense perception. Systematically studied data quality/scale, multi-step stochastic sampling, ensemble inference, and supervision design across depth, normal, semantic segmentation, and image matting tasks.</li><li>Proposed a deterministic single-step fine-tuning paradigm that converts diffusion sampling into single-step dense prediction, with task-specific decoders and image-level supervision, improving boundary/detail recovery while substantially reducing inference cost.</li></ul></div>
+  <div class="timeline-item no-break"><div class="timeline-date">2022.12 - 2023.04</div><div class="timeline-body"><div class="timeline-head"><div class="timeline-title"><span>DJI (Automotive Local Mapping Group)</span></div><div class="timeline-meta">Algorithm Intern</div></div></div><ul class="timeline-points"><li>Led FrozenRecon (ICCV 2023) for pose-free 3D scene reconstruction from RGB videos. Used a frozen robust monocular depth model as the geometric prior and designed a test-time optimization framework for scale/shift ambiguity and temporal inconsistency in affine-invariant depth.</li><li>Developed a geometric alignment pipeline that jointly optimizes camera poses, intrinsics, and depth scale-shift parameters, recovering scale-consistent dense 3D scenes from monocular RGB videos without input poses or depth sensors.</li></ul></div>
+  <div class="timeline-item no-break"><div class="timeline-date">2021.04 - 2022.03</div><div class="timeline-body"><div class="timeline-head"><div class="timeline-title"><span>Huawei Noah's Ark Lab</span></div><div class="timeline-meta">Algorithm Intern</div></div></div><ul class="timeline-points"><li>Led BoostingDepth (JUSTC 2024) for robust monocular depth estimation and video-based 3D reconstruction. Built cross-domain training data from 6.3M+ RGB-D images and organized supervision by annotation quality and scene source to train a generalizable monocular depth model.</li><li>Addressed frame-wise depth scale inconsistency in monocular videos by introducing sparse anchors and a local scale-alignment module, calibrating depth scale/shift with local weighted linear regression for consistent metric geometry.</li></ul></div>
+</div>
+
+<h2>Academic Activities</h2>
+<div class="activity-layout"><ul><li><b>16 research papers</b>: 2 under review; <b>12 accepted papers</b>, including <b>9 top-tier conference papers</b> at CVPR/ICLR/ICCV/AAAI/ICML/SIGGRAPH/NeurIPS and 1 CVPR Workshop paper.</li><li><b>5 accepted first-author papers</b> (including <b>3 top-tier conference papers</b> at CVPR/ICLR/ICCV); also 1 co-first-author AAAI Oral paper and 1 ICRA paper as corresponding author.</li><li><b>Conference Reviewer:</b> CVPR, ICCV, ECCV, ICLR, NeurIPS, AAAI</li><li><b>Journal Reviewer:</b> Artificial Intelligence</li></ul><div class="conference-logo-grid"><img src="assets/conference-logos/trimmed/CVPR_2026_horizontal.png" alt="CVPR"><img src="assets/conference-logos/trimmed/ICLR_2025_horizontal.png" alt="ICLR"><img src="assets/conference-logos/trimmed/ICCV_2023_horizontal.png" alt="ICCV"><img src="assets/conference-logos/trimmed/AAAI_2025_horizontal.png" alt="AAAI"><img src="assets/conference-logos/trimmed/ICRA_2024_horizontal.png" alt="ICRA"><img src="assets/conference-logos/trimmed/ICML_2026_horizontal.png" alt="ICML"><img src="assets/conference-logos/trimmed/SIGGRAPH_2025_horizontal.png" alt="SIGGRAPH"><img src="assets/conference-logos/trimmed/ICCV_2025_horizontal.png" alt="ICCV"><img src="assets/conference-logos/trimmed/NeurIPS_2024_horizontal.png" alt="NeurIPS"></div></div>
+
+<h2>Awards</h2>
+<div class="awards-layout"><ul><li>CVPR 2023 Workshop 2nd Monocular Depth Estimation Challenge <b>1st Place</b></li><li>CVPR 2021 Workshop Streaming Perception 2D Image Detection <b>2nd Place</b></li><li>CVPR 2021 Workshop UG2+ Low-Light Face Detection <b>3rd Place</b></li><li>2018 NXP Cup National University Intelligent Car Competition <b>National Second Prize, China</b></li></ul><div class="award-photo-frame"><img class="award-photo" src="assets/cars_freescale-resume.jpeg" alt="Intelligent car"><img class="award-photo" src="assets/freescale_room.jpg" alt="Competition field"></div></div>
+
+<h2 class="page-break">Publications</h2>
+<p class="pub-note"><i>* denotes equal contribution; † denotes corresponding author.</i></p>
+<h3>♠ First-Author / Co-First-Author / Corresponding-Author Papers</h3>
+<table class="pub-table pub-table-primary">
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/carve.png" alt=""><span class="pub-badge">CVPR 2026</span></div></td>
+      <td class="pub-content"><b>Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation</b><br><a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>*, Hua Geng*, Huanyi Zheng, Songyi Yin, Yanlong Sun, <a href="https://stan-haochen.github.io">Hao Chen</a>, <a href="https://cshen.github.io">Chunhua Shen</a><sup>†</sup><br><span class="venue">CVPR, 2026</span><div class="paper-links">[<a href="https://arxiv.org/abs/2604.21713">PDF</a>]</div><div class="summary">Systematically analyzes key factors in 3D visual geometry estimation, including data, supervision, losses, and resolution, and proposes unified training and modeling strategies for reliable depth/normal prediction.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/genpercept.png" alt=""><span class="pub-badge">ICLR 2025</span></div></td>
+      <td class="pub-content"><b>What Matters When Repurposing Diffusion Models for General Dense Perception Tasks?</b><br><a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="https://yongtao.me">Yongtao Ge</a>, <a href="https://mingyulau.github.io">Mingyu Liu</a>, <a href="https://scholar.google.com/citations?user=I2aAMsAAAAAJ&amp;hl=en">Chengxiang Fan</a>, <a href="https://github.com/felix-ky">Kangyang Xie</a>, <a href="https://github.com/ZhiyueZhau">Zhiyue Zhao</a>, <a href="https://stan-haochen.github.io">Hao Chen</a>, <a href="https://cshen.github.io">Chunhua Shen</a><sup>†</sup><br><span class="venue">ICLR, 2025</span><div class="paper-links">[<a href="https://arxiv.org/abs/2403.06090">PDF</a>] [<a href="https://github.com/aim-uofa/GenPercept">Code</a>]</div><div class="summary">Repurposes pretrained text-to-image diffusion models for general dense perception and introduces deterministic single-step prediction for efficient, generalizable depth, normal, segmentation, and matting tasks.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/frozenrecon.png" alt=""><span class="pub-badge">ICCV 2023</span></div></td>
+      <td class="pub-content"><b>FrozenRecon: Pose-free 3D Scene Reconstruction with Frozen Depth Models</b><br><a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>*, <a href="https://yvanyin.xyz">Wei Yin</a>*, <a href="https://stan-haochen.github.io">Hao Chen</a>, <a href="https://cshen.github.io">Chunhua Shen</a>, <a href="https://cklibra.github.io">Kai Cheng</a>, <a href="https://scholar.google.com/citations?user=r6CvuOUAAAAJ&amp;hl=en">Feng Zhao</a><sup>†</sup><br><span class="venue">ICCV, 2023</span><div class="paper-links">[<a href="https://arxiv.org/abs/2308.05733">PDF</a>] [<a href="https://github.com/aim-uofa/FrozenRecon">Code</a>] [<a href="https://aim-uofa.github.io/FrozenRecon/">Homepage</a>]</div><div class="summary">Uses a frozen robust monocular depth model as a geometric prior for pose-free RGB video reconstruction, jointly calibrating camera poses, intrinsics, and depth scale-shift through test-time optimization.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/dadc.png" alt=""><span class="pub-badge">MIR 2024</span></div></td>
+      <td class="pub-content"><b>Towards Domain-Agnostic Depth Completion</b><br><a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>*, <a href="https://yvanyin.xyz">Wei Yin</a>*, <a href="https://jimmie33.github.io">Jianming Zhang</a>, <a href="https://www.oliverwang.info">Oliver Wang</a>, <a href="https://sniklaus.com/welcome">Simon Niklaus</a>, Simon Chen, <a href="https://jwbian.net">Jia-Wang Bian</a><sup>†</sup><br><span class="venue">Machine Intelligence Research (MIR), 2024</span><div class="paper-links">[<a href="https://arxiv.org/abs/2207.14466">PDF</a>]</div><div class="summary">Uses monocular depth as a cross-domain geometric prior to complete sparse, noisy, and low-resolution depth inputs, improving generalization across sensors and scenes.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/boostingdepth.png" alt=""><span class="pub-badge">JUSTC 2024</span></div></td>
+      <td class="pub-content"><b>Towards 3D Scene Reconstruction from Locally Scale-Aligned Monocular Video Depth</b><br><a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="https://scholar.google.com/citations?user=r6CvuOUAAAAJ&amp;hl=en">Feng Zhao</a><sup>†</sup><br><span class="venue">Journal of University of Science and Technology (JUSTC), 2024</span><div class="paper-links">[<a href="https://arxiv.org/abs/2202.01470v3">PDF</a>]</div><div class="summary">Trains a robust monocular depth model on large-scale cross-domain RGB-D data and converts frame-wise relative depth into consistent metric geometry through sparse-anchor local scale alignment.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/diffcalib.png" alt=""><span class="pub-badge">AAAI 2025</span></div></td>
+      <td class="pub-content"><b>DiffCalib: Reformulating Monocular Camera Calibration as Diffusion-based Dense Incident Map Generation</b><br><a href="https://scholar.google.com/citations?user=TmlABUIAAAAJ&amp;hl=en">Xiankang He</a>*, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>*, <a href="https://scholar.google.com/citations?user=PefHCMUAAAAJ&amp;hl=en">Bo Zhang</a>, <a href="https://stan-haochen.github.io">Hao Chen</a>, <a href="https://scholar.google.com/citations?user=Jx4rK-UAAAAJ&amp;hl=zh-CN">Ying Cui</a>, <a href="https://homepage.zjut.edu.cn/gdy/">Dongyan Guo</a><sup>†</sup><br><span class="venue">AAAI, 2025 (Oral)</span><div class="paper-links">[<a href="https://arxiv.org/abs/2405.15619">PDF</a>] [<a href="https://github.com/zjutcvg/DiffCalib">Code</a>]</div><div class="summary">Reformulates monocular camera calibration as dense incident-map generation, using diffusion models to predict pixel-level imaging rays and recover camera intrinsics through geometric solving.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/Improving Neural Indoor Surface Reconstruction with Mask-Guided Adaptive Consistency Constraints.png" alt=""><span class="pub-badge">ICRA 2024</span></div></td>
+      <td class="pub-content"><b>Improving Neural Indoor Surface Reconstruction with Mask-Guided Adaptive Consistency Constraints</b><br><a href="https://scholar.google.com/citations?user=jmDwmGEAAAAJ&amp;hl=zh-CN">Xinyi Yu</a>, <a href="https://scholar.google.com/citations?user=ThiUv8AAAAAJ&amp;hl=zh-CN">Liqin Lu</a>, <a href="https://scholar.google.com/citations?user=UvouK0YAAAAJ&amp;hl=zh-CN">Jintao Rong</a>, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a><sup>†</sup>, <a href="https://homepage.zjut.edu.cn/oll/">Linlin Ou</a><br><span class="venue">ICRA, 2024</span><div class="paper-links">[<a href="https://arxiv.org/abs/2309.09739">PDF</a>]</div><div class="summary">Improves complex indoor neural surface reconstruction by selecting reliable geometric consistency constraints with adaptive masks, reducing the negative impact of erroneous depth priors.</div></td>
+    </tr>
+</table>
+<h3 class="page-break">♠ Collaborative Papers</h3>
+<table class="pub-table pub-table-coauthor">
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/binding voices.png" alt=""><span class="pub-badge">NeurIPS 2026</span></div></td>
+      <td class="pub-content"><b>Binding Voices to Characters: Disentangled Cross-Modal Alignment for Multi-Speaker Perception</b><br><a href="https://www.linkedin.com/in/%E6%B5%A9%E4%BA%AE-%E5%88%98-190b992b4/">Haoliang Liu</a>, Jingzheng Li, Jiong Yin, Zhaotian Cai, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="https://github.com/Tinker250">Rongjunchen Zhang</a><sup>†</sup><br><span class="venue">Submitted to NeurIPS 2026</span><div class="summary">Studies multi-speaker video understanding by disentangling cross-modal alignment among character appearance, voice, and identity, improving the stability and interpretability of voice-character binding.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/ChartSync.png" alt=""><span class="pub-badge">EMNLP 2026</span></div></td>
+      <td class="pub-content"><b>ChartSync: A Benchmark for Visuo-Logical Cascading Chart Editing</b><br>Jiakang Yu, <a href="https://scholar.google.com/citations?hl=en&amp;user=Zy0aAyIAAAAJ">Yixuan Chai</a>, Tianci Wang, Rihui Jin, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="https://sjxy.jhun.edu.cn/f2/b6/c7439a127670/pagem.htm">Hongtao Deng</a><sup>†</sup>, Zhu Xun, Wang Gao, Xinrun Guo, <a href="https://scholar.google.com/citations?user=QsP0kL0AAAAJ&amp;hl=zh-CN">Haipang Wu</a><br><span class="venue">Submitted to EMNLP 2026</span><div class="summary">Introduces a visuo-logical cascading chart-editing benchmark to evaluate synchronized chart editing under content, structure, semantic, and numerical-logic constraints.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/CG-MLLM.png" alt=""><span class="pub-badge">ICML 2026</span></div></td>
+      <td class="pub-content"><b>CG-MLLM: Captioning and Generating 3D content via Multi-modal Large Language Models</b><br><a href="https://cv.jream.top">Junming Huang</a>, <a href="https://cv.wangchi.art">Chi Wang</a>, Letian Li, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, Donglin Huang, <a href="https://stan-haochen.github.io">Hao Chen</a>, Qiang Dai, <a href="http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm">Weiwei Xu</a><sup>†</sup><br><span class="venue">ICML, 2026</span><div class="paper-links">[<a href="https://arxiv.org/abs/2601.21798">PDF</a>]</div><div class="summary">Represents 3D objects as structured inputs processable by multimodal large language models, enabling unified 3D captioning and 3D content generation.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/generative_video_matting.png" alt=""><span class="pub-badge">SIGGRAPH 2025</span></div></td>
+      <td class="pub-content"><b>Generative Video Matting</b><br><a href="https://yongtao.me">Yongtao Ge</a>, <a href="https://github.com/felix-ky">Kangyang Xie</a>, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, Li Ke, <a href="https://mingyulau.github.io">Mingyu Liu</a>, <a href="https://scholar.google.com/citations?user=EQDfV9cAAAAJ&amp;hl=zh-CN">Longtao Huang</a>, <a href="https://scholar.google.com/citations?user=lrf-wkQAAAAJ&amp;hl=en">Hui Xue</a>, <a href="https://stan-haochen.github.io">Hao Chen</a>, <a href="https://cshen.github.io">Chunhua Shen</a><sup>†</sup><br><span class="venue">SIGGRAPH, 2025</span><div class="paper-links">[<a href="https://arxiv.org/abs/2508.07905">PDF</a>]</div><div class="summary">Formulates video matting as conditional video generation, leveraging video diffusion priors to recover fine structures such as hair while improving temporal consistency.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/pomato.png" alt=""><span class="pub-badge">ICCV 2025</span></div></td>
+      <td class="pub-content"><b>POMATO: Marrying Pointmap Matching with Temporal Motion for Dynamic 3D Reconstruction</b><br><a href="https://scholar.google.com/citations?user=EG6WdEQAAAAJ&amp;hl=en">Songyan Zhang</a>*, <a href="https://yongtao.me">Yongtao Ge</a>*, Jinyuan Tian*, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="https://stan-haochen.github.io">Hao Chen</a><sup>†</sup>, <a href="https://lvchen.wixsite.com/automan">Chen Lv</a>, <a href="https://cshen.github.io">Chunhua Shen</a><br><span class="venue">ICCV, 2025</span><div class="paper-links">[<a href="https://arxiv.org/abs/2504.05692">PDF</a>] [<a href="https://github.com/wyddmw/POMATO">Code</a>]</div><div class="summary">Combines pointmap matching with temporal motion modeling to jointly estimate dynamic 3D structure, video depth, and point trajectories with improved reconstruction consistency.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/DiffewS.png" alt=""><span class="pub-badge">NeurIPS 2024</span></div></td>
+      <td class="pub-content"><b>Unleashing the Potential of the Diffusion Model in Few-shot Semantic Segmentation</b><br><a href="https://z-mu-z.github.io">Muzhi Zhu</a>*, <a href="https://scholar.google.com/citations?user=9JcQ2hwAAAAJ&amp;hl=en">Yang Liu</a>*, <a href="https://github.com/viakai">Zekai Luo</a>*, <a href="https://jingchenchen.github.io">Chenchen Jing</a>, <a href="https://stan-haochen.github.io">Hao Chen</a><sup>†</sup>, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="https://www.xloong.wang">Xinlong Wang</a>, <a href="https://cshen.github.io">Chunhua Shen</a><br><span class="venue">NeurIPS, 2024</span><div class="paper-links">[<a href="https://arxiv.org/abs/2410.02369">PDF</a>] [<a href="https://github.com/aim-uofa/DiffewS">Code</a>]</div><div class="summary">Transfers generative diffusion priors to few-shot semantic segmentation and improves novel-class segmentation through support-query interaction and mask supervision.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/The second monocular depth estimation challenge.png" alt=""><span class="pub-badge">CVPR Workshop 2023</span></div></td>
+      <td class="pub-content"><b>The Second Monocular Depth Estimation Challenge</b><br><span class="venue">CVPR Workshop, 2023</span><div class="paper-links">[<a href="https://arxiv.org/abs/2304.07051">PDF</a>] [<a href="https://jspenmar.github.io/MDEC/">Homepage</a>]</div><div class="summary">Won 1st place in the 2nd Monocular Depth Estimation Challenge at CVPR 2023.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/geobench.png" alt=""><span class="pub-badge">arXiv 2024</span></div></td>
+      <td class="pub-content"><b>GeoBench: Benchmarking and Analyzing Monocular Geometry Estimation Models</b><br><a href="https://yongtao.me">Yongtao Ge</a>, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="https://github.com/ZhiyueZhau">Zhiyue Zhao</a>, <a href="https://www.adelaide.edu.au/directory/libo.sun">Libo Sun</a>, Zheng Huang, Yanlong Sun, <a href="https://stan-haochen.github.io">Hao Chen</a>, <a href="https://cshen.github.io">Chunhua Shen</a><sup>†</sup><br><span class="venue">arXiv, 2024</span><div class="paper-links">[<a href="https://arxiv.org/abs/2406.12671">PDF</a>] [<a href="https://github.com/aim-uofa/GeoBench">Code</a>]</div><div class="summary">Builds a unified benchmark for monocular geometry estimation, comparing depth/normal models and analyzing the effects of data quality, model paradigms, and training settings.</div></td>
+    </tr>
+    <tr class="no-break">
+      <td class="pub-img-cell"><div class="pub-thumb"><img src="assets/homepage-papers/Exploiting correspondences with all-pairs correlations for multi-view depth estimation.png" alt=""><span class="pub-badge">arXiv 2022</span></div></td>
+      <td class="pub-content"><b>Exploiting Correspondences with All-pairs Correlations for Multi-view Depth Estimation</b><br><a href="https://cklibra.github.io">Kai Cheng</a>, <a href="https://stan-haochen.github.io">Hao Chen</a>, <a href="https://yvanyin.xyz">Wei Yin</a>, <a href="https://guangkaixu.github.io"><u>Guangkai Xu</u></a>, <a href="http://staff.ustc.edu.cn/~xjchen99/">Xuejin Chen</a><sup>†</sup><br><span class="venue">arXiv, 2022</span><div class="paper-links">[<a href="https://arxiv.org/abs/2205.02481">PDF</a>]</div><div class="summary">Models multi-view image correspondences with all-pairs correlations and improves multi-view depth estimation through optical-flow initialization and iterative refinement.</div></td>
+    </tr>
+</table>
+</body>
+</html>
